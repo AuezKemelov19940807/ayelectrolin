@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+@theme {
+  --color-violet: #6E3F88;
+
+  --color-dark-violet: ##282460;
+  --color-black: #131313;
+
+   --shadow-custom: 0px 4px 8px 3px #00000026;
+}
+@plugin "tailwind-hamburgers";
+
+
+html,
+body,
+#__nuxt {
+    font-family: "Montserrat", sans-serif;
+    @apply h-full overflow-x-hidden font-medium;
+}
+
+.container {
+  @apply w-full max-w-[1600px] mx-auto px-5;
+       
+}
