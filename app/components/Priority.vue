@@ -3,15 +3,14 @@
 </script>
 
 <template>
-    <div class="md:pt-24 mb-72">
+    <div>
         <div class="container">
             <div class="flex flex-col xl:flex-row gap-y-8 md:gap-y-10 xl:items-center justify-between gap-x-10 ">
                 <div class="xl:max-w-[600px] flex flex-col gap-y-4 md:gap-y-10">
                     <UITitle title="Основные приоритеты работы" />
                     <p class="text-base">Наши приоритеты — это надежность, оперативность и внимание к деталям. Мы
                         обеспечиваем высокое качество продукции и гибко подстраиваемся под задачи каждого клиента.</p>
-                    <NuxtLink to="/catalogs"
-                        class="hidden text-white xl:inline-block w-fit bg-violet py-4 px-12 rounded-4xl">
+                    <NuxtLink to="/" class="hidden text-white xl:inline-block w-fit bg-violet py-4 px-12 rounded-4xl">
                         Посмотреть
                         каталог
                     </NuxtLink>

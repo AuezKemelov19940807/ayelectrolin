@@ -4,21 +4,28 @@ const slides = ref(Array.from({ length: 10 }))
 const swiper = useSwiper(containerRef, {
 
     loop: true,
+    autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+    },
+    spaceBetween: 48,
+
+    speed: 3000,
+    effect: 'slide',
 
 
 })
 
-onMounted(() => {
-    console.log(swiper.instance)
-})
+
 </script>
 
 <template>
     <div>
         <div class="container">
-            <h4 class="text-3xl font-bold text-center mb-8">Отзывы наших клиентов</h4>
-            <div class="flex">
-                <button class="cursor-pointer" @click="swiper.prev()">
+            <h4 class="text-2xl md:text-3xl font-bold text-center mb-6 md:mb-8">Отзывы наших клиентов</h4>
+            <div class="relative">
+                <button class="cursor-pointer absolute hidden lg:block left-0 top-1/2 -translate-y-1/2 "
+                    @click="swiper.prev()" type="button" aria-label="Previous slide">
                     <svg class="rotate-180" xmlns="http://www.w3.org/2000/svg" width="48" height="49"
                         viewBox="0 0 49 49" fill="none">
                         <rect x="47.5" y="48" width="47" height="47" rx="7.5" transform="rotate(180 47.5 48)"
@@ -28,17 +35,21 @@ onMounted(() => {
                             fill="#6E3F88" />
                     </svg>
                 </button>
-                <div class="max-w-[1300px] mx-auto">
+                <div class=" w-full max-w-[1300px] mx-auto">
                     <ClientOnly>
-                        <swiper-container ref="containerRef" :init="false">
+                        <swiper-container ref="containerRef" :init="false" class="w-full max-w-[1300px]">
                             <swiper-slide v-for="(slide, idx) in slides" :key="idx">
-                                <div class="flex flex-col items-center justify-center gap-y-8">
-                                    <p class="text-2xl leading-[130%] text-center">“ Отличная компания! Профессионалы
+                                <div class="flex flex-col items-center justify-center gap-y-4 md:gap-y-8">
+                                    <p
+                                        class="text-base md:text-2xl  leading-[130%] text-center  max-w-[800px] 2xl:max-w-full ">
+                                        “
+                                        Отличная компания!
+                                        Профессионалы
                                         своего дела,
                                         все вопросы
                                         решают быстро и
                                         грамотно. Очень доволен их работой, рекомендую всем! ”</p>
-                                    <p class="font-semibold text-2xl">Якубов Антон</p>
+                                    <p class="font-medium md:font-semibold text-lg md:text-2xl">Якубов Антон</p>
                                 </div>
                             </swiper-slide>
                         </swiper-container>
@@ -49,7 +60,8 @@ onMounted(() => {
                 <!-- Go back one slide -->
 
                 <!-- Go forward one slide -->
-                <button class="cursor-pointer" @click="swiper.next()">
+                <button class="cursor-pointer absolute right-0 top-1/2 -translate-y-1/2 hidden lg:block"
+                    @click="swiper.next()">
                     <svg xmlns="http://www.w3.org/2000/svg" width="48" height="49" viewBox="0 0 49 49" fill="none">
                         <rect x="47.5" y="48" width="47" height="47" rx="7.5" transform="rotate(180 47.5 48)"
                             stroke="#6E3F88" />
@@ -65,4 +77,12 @@ onMounted(() => {
     </div>
 </template>
 
-<style scoped lang="css"></style>
+<style scoped lang="css">
+swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100% !important;
+    /* каждый слайд не шире контейнера */
+}
+</style>

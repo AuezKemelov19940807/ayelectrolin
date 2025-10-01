@@ -33,7 +33,7 @@ onClickOutside(burger, () => {
     position: fixed;
     width: 30px;
     height: 18px;
-    top: 35px;
+    top: 25px;
     right: 10px;
     z-index: 50;
 }

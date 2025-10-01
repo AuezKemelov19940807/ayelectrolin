@@ -5,10 +5,10 @@
 <template>
     <div>
         <div class="container">
-            <div class="flex gap-x-30">
-                <div class="max-w-[650px]">
-                    <UITitle class="mb-10" title="Получите консультацию" />
-                    <form action="" method="post" class="flex  flex-col gap-y-6">
+            <div class="grid md:grid-cols-2 gap-y-6 gap-x-6 xl:gap-x-10 2xl:gap-x-30">
+                <div class="w-full lg:max-w-[650px]">
+                    <UITitle class="mb-10 text-center lg:text-left " title="Получите консультацию" />
+                    <form action="" method="post" class="flex  flex-col gap-y-4 md:gap-y-6">
                         <label for="">
                             <input class="border border-violet rounded-3xl p-4 w-full focus:outline-none  text-lg "
                                 type="tel" placeholder="Телефон">
@@ -29,7 +29,7 @@
 
                     </form>
                 </div>
-                <div class="w-full flex flex-col flex-1 gap-y-7.5">
+                <div class="flex-1 w-full flex flex-col md:flex-1 gap-y-4 md:gap-y-7.5">
                     <div class="w-full">
                         <iframe class="rounded-lg"
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2906.641473810303!2d76.88028687680439!3d43.23797607112483!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x388369000130ca87%3A0x272dbfaea4258e7e!2z0JHQsNC7LdCx0LDQu9CwMSDQsdOp0LHQtdC60LbQsNC5INCx0LDQu9Cw0LHQsNKb0YjQsNGB0Ys!5e0!3m2!1sen!2skz!4v1759166655478!5m2!1sen!2skz"
@@ -37,7 +37,7 @@
                             referrerpolicy="no-referrer-when-downgrade"></iframe>
 
                     </div>
-                    <div class="border border-violet p-6 rounded-lg flex flex-col gap-y-8.5">
+                    <div class="border border-violet p-6 rounded-lg flex flex-col gap-y-4 md:gap-y-8.5">
                         <p class="text-2xl font-semibold text-violet">Головной офис</p>
                         <a class="flex items-center gap-x-2.5" href="tel:+77478544725">
                             <span>
@@ -61,7 +61,7 @@
                             </span>
                             <span class="font-medium text-black text-lg">ayelectrolin@mail.ru</span>
                         </a>
-                        <a class="flex items-center gap-x-2.5"
+                        <a class="flex md:items-center gap-x-2.5"
                             href="https://maps.google.com/?q=43.23797607112483,76.88028687680439" target="_blank">
                             <span>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="18" viewBox="0 0 13 18"
@@ -79,9 +79,7 @@
                         </a>
                     </div>
                 </div>
-
             </div>
-
         </div>
     </div>
 </template>
