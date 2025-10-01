@@ -36,7 +36,7 @@
 <style scoped lang="css">
 .brand-item {
     @media(max-width: 768px) {
-        width: 43%;
+        width: 33%;
     }
 }
 </style>
