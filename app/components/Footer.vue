@@ -37,6 +37,7 @@
                                 </clipPath>
                             </defs>
                         </svg>
+
                         <p class="text-lg sm:text-2xl font-medium sm:font-semibold">АЙ ЭЛЕКТРО ЛИН</p>
                     </NuxtLink>
                     <div class="flex sm:flex-row flex-col gap-y-4 pt-6 sm:pt-10 gap-x-6 text-base text-black">
