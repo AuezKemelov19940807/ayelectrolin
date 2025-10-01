@@ -7,18 +7,20 @@ import Zere from '~/components/Zere.vue';
 </script>
 
 <template>
-    <div class="bg mb-18 md:pt-24 lg:mb-72">
-        <Banner class="pb-18 lg:pb-24 2xl:pb-40" />
+    <div class="bg mb-18 md:pt-24 lg:mb-28">
+        <Banner class="pb-18 lg:pb-24 2xl:pb-34" />
         <Equipment />
     </div>
-    <Priority class="mb-18 md:pt-24 lg:mb-72" />
-    <!-- <Guarantee class="mb-18 md:mb-40" /> -->
+    <Priority class="mb-18 md:pt-24 lg:mb-28" />
+    <Guarantee class="mb-18 md:mb-40" />
+
+    <Brands class="mb-18 md:mb-48" />
 
     <Feedback class="mb-18 md:mb-48" />
 
     <Zere class="mb-18 md:mb-48" />
 
-    <Brands class="mb-18 md:mb-48" />
+
 
     <Form class="mb-18 md:mb-30" />
 

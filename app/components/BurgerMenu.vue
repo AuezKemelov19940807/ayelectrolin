@@ -17,7 +17,7 @@ const props = defineProps<{
         <Menu />
         <button class="">
             <span class="text-violet text-2xl font-semibold ">
-                {{ $t('submit_application') }}
+                Заказать звонок
             </span>
         </button>
 

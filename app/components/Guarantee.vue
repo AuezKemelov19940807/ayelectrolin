@@ -1,26 +1,32 @@
 <script setup lang="ts">
-const containerRef = ref(null)
-
-
-const slides = ref(Array.from({ length: 13 }));
-const activeIndex = ref(0);
-
-const onSwiper = (swiper: any) => {
-    swiper.on("slideChange", () => {
-        activeIndex.value = swiper.realIndex;
-    });
-};
-
-
-
 </script>
 
 <template>
     <div>
         <div class="container">
-            <div class="flex justify-between items-center ">
-                <div class="max-w-[718px]">
-                    <UITitle class="mb-6" title="Гарантируем качество" />
+
+
+            <div
+                class="flex flex-col-reverse xl:flex-row gap-y-6 md:gap-y-10 justify-between items-center gap-x-10 2xl:gap-x-40">
+                <div class="flex-1/2 max-w-[718px]">
+                    <div class="flex  justify-center sm:justify-start gap-x-1 sm:hidden ">
+                        <span class="w-12 h-12 md:w-18 md:h-18">
+                            <img src="~/assets/img/st.webp" alt="">
+                        </span>
+                        <h2 class="font-bold  text-center md:text-left -mt-1 md:-mt-3 text-2xl lg:text-[45px] ">
+                            Гарантируем качество </h2>
+
+                    </div>
+
+                    <div class="hidden  justify-center xl:justify-start gap-x-1  sm:flex ">
+                        <span class="w-18 h-18">
+                            <img src="~/assets/img/st.webp" alt="">
+                        </span>
+                        <h2 class="font-bold  text-left -mt-3 text-[45px] ">
+                            Гарантируем качество </h2>
+
+                    </div>
+
                     <div class="flex flex-col gap-y-6">
                         <div class="flex flex-col gap-y-4 border border-violet rounded-lg py-2 px-4">
                             <p class="font-semibold text-2xl">Комплектующие от мировых брендов</p>
@@ -36,28 +42,8 @@ const onSwiper = (swiper: any) => {
                         </div>
                     </div>
                 </div>
-                <div class="max-w-[780px]">
-                    <div class="flex gap-x-12 items-center ">
-                        <div v-for="(slide, idx) in 3" :key="idx">
-                            <div class="shadow-2xl"
-                                :class="idx === 1 ? 'max-w-[325px] max-h-[460px] ' : 'max-w-[180px] max-h-[248px]'">
-                                <img class="w-full h-full object-cover" src="~/assets/img/guarantee-1.webp"
-                                    alt="Guarantee Image">
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- <ClientOnly>
-                        <swiper-container ref="swiperRef" :init="false" :initial-slide="2">
-                            <swiper-slide class=" " v-for="(slide, idx) in slides" :key="idx">
-                                <div>
-                                    <img class="w-full h-full object-cover" src="~/assets/img/guarantee-1.webp"
-                                        alt="Guarantee Image">
-                                </div>
-                            </swiper-slide>
-                        </swiper-container>
-                    </ClientOnly> -->
-                </div>
+                <!-- Swiper -->
+                <GuaranteeSwiper />
             </div>
         </div>
     </div>
