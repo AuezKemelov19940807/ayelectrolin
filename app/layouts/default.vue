@@ -1,6 +1,6 @@
 <script lang="ts">
 
-const open = ref(false)
+
 </script>
 
 <template>
