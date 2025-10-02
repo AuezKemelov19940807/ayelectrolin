@@ -21,7 +21,7 @@
                     </div> -->
                 </div>
                 <div class="md:pr-20">
-                    <div class="  ">
+                    <div class="max-w-[250px]  md:max-w-full ">
                         <img src="~/assets/img/logo-zere.svg" alt="">
                         <!-- <svg xmlns="http://www.w3.org/2000/svg" width="500" height="250" viewBox="0 0 500 250"
                             fill="none">

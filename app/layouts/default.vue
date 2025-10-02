@@ -1,12 +1,20 @@
+<script lang="ts">
+
+const open = ref(false)
+</script>
+
 <template>
     <div class="flex flex-col h-full">
         <Header />
-        <div class="flex-1">
+        <main class="flex-1">
             <slot />
-        </div>
+        </main>
         <Footer />
-
+        <Modal />
     </div>
+
+
+
 </template>
 
 <style lang="css"></style>

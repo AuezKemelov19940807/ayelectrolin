@@ -12,7 +12,7 @@ const closeActiveMenuBurger = () => {
     activeMenuBurger.value = false
 }
 
-
+const { open } = useModal()
 
 
 </script>
@@ -21,7 +21,7 @@ const closeActiveMenuBurger = () => {
     <header class="mt-2.5  md:mt-6 z-40 fixed md:relative bg ">
         <div class="container">
             <div class="flex items-center justify-between relative">
-                <logo />
+                <logo class="pt-2.5" />
 
                 <a class="block md:hidden  right-24 top-3.5 fixed " href="tel:77478544725">
                     <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="30px"
@@ -31,7 +31,7 @@ const closeActiveMenuBurger = () => {
                     </svg>
                 </a>
 
-                <a href="" class="block md:hidden  right-14 top-4.5 fixed ">
+                <a href="https://wa.me/77478544725" target="_blank" class="block md:hidden  right-14 top-4.5 fixed ">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="34px" height="34px"
                         fill-rule="evenodd" clip-rule="evenodd">
                         <path fill="#fff"
@@ -81,14 +81,20 @@ const closeActiveMenuBurger = () => {
                         </a>
                     </ul>
                     <Menu />
-                    <ApplicationForm text="Заказать звонок" />
+                    <ApplicationForm text="Заказать звонок" @click="open" />
                     <Lang />
+
+
                 </div>
             </div>
 
         </div>
         <BurgerMenu :activeMenuBurger="activeMenuBurger" />
     </header>
+
+
+
+
 </template>
 
 <style scoped lang="css">
@@ -103,5 +109,20 @@ const closeActiveMenuBurger = () => {
         top: 0;
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.04);
     }
+}
+
+
+.slide-fade-enter-active {
+    transition: all 0.3s ease-out;
+}
+
+.slide-fade-leave-active {
+    transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+    transform: translateY(-20px);
+    opacity: 0;
 }
 </style>

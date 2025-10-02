@@ -1,5 +1,8 @@
 <script setup lang="ts">
 
+
+const { open } = useModal()
+
 </script>
 
 <template>
@@ -14,7 +17,7 @@
                         Профессиональное
                         решение под любые задачи
                     </p>
-                    <ApplicationForm text="Оставить заявку" class="" />
+                    <ApplicationForm text="Оставить заявку" @click="open" />
                 </div>
                 <div class="relative bg mr-14 md:mr-20 ">
                     <div class=" w-full h-full max-w-[700px] max-h-[600px]   -z-10 ">

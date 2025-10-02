@@ -5,6 +5,8 @@ const props = defineProps<{
     activeMenuBurger: boolean
 }>()
 
+const { open } = useModal()
+
 </script>
 
 <template>
@@ -15,7 +17,7 @@ const props = defineProps<{
             'top-0 opacity-100 translate-y-0': activeMenuBurger
         }">
         <Menu />
-        <button class="">
+        <button class="" @click="open">
             <span class="text-violet text-2xl font-semibold ">
                 Заказать звонок
             </span>

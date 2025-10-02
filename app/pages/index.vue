@@ -22,7 +22,7 @@ import Zere from '~/components/Zere.vue';
 
 
 
-    <Form class="mb-18 md:mb-30" />
+    <ContactForm class="mb-18 md:mb-30" />
 
 </template>
 <style scoped lang="css">

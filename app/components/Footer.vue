@@ -3,7 +3,7 @@
 </script>
 
 <template>
-    <div class="border-t border-violet pt-6 sm:pt-10 pb-6 sm:pb-10">
+    <footer class="border-t border-violet pt-6 sm:pt-10 pb-6 sm:pb-10">
         <div class="container">
             <div
                 class="2xl:flex grid lg:grid-cols-2 gap-y-6 sm:gap-y-10 gap-x-5 items-center justify-center place-content-center 2xl:justify-between">
@@ -15,31 +15,7 @@
                         href="">Cookie Policy</a>
                 </div>
                 <div class="flex items-center justify-center flex-col order-1  2xl:order-2">
-                    <NuxtLink class="flex items-center gap-x-4" to="/">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="49" height="48" viewBox="0 0 49 48" fill="none">
-                            <g clip-path="url(#clip0_154_290)">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M34.0186 46.0358C31.0984 47.3008 27.8783 48.0022 24.4957 48.0022C18.3543 48.0022 12.7482 45.6903 8.50171 41.8902L17.8921 25.3052L25.0522 22.4204L24.0722 25.7298L33.8652 21.8809L34.0186 46.0358Z"
-                                    fill="#6E3F88" />
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M28.8489 0.395996C30.6337 0.723408 32.3498 1.24857 33.9736 1.94803L33.8646 19.8999L27.69 22.165L28.3983 19.4726L18.9822 22.6947L28.8489 0.395996Z"
-                                    fill="#6E3F88" />
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M35.1062 2.47217C43.0375 6.39091 48.4975 14.5643 48.4975 24.003C48.4975 33.2129 43.2985 41.2182 35.678 45.2418L35.1062 2.47217Z"
-                                    fill="black" />
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M7.26668 40.6995C3.07784 36.3782 0.497803 30.4882 0.497803 24.0004C0.497803 10.7543 11.2521 0 24.4982 0C25.3801 0 26.2511 0.0474444 27.1084 0.140385L7.26668 40.6995Z"
-                                    fill="black" />
-                            </g>
-                            <defs>
-                                <clipPath id="clip0_154_290">
-                                    <rect width="48" height="48" fill="white" transform="translate(0.5)" />
-                                </clipPath>
-                            </defs>
-                        </svg>
-
-                        <p class="text-lg sm:text-2xl font-medium sm:font-semibold">АЙ ЭЛЕКТРО ЛИН</p>
-                    </NuxtLink>
+                    <Logo />
                     <div class="flex sm:flex-row flex-col gap-y-4 pt-6 sm:pt-10 gap-x-6 text-base text-black">
                         <div class="flex flex-col gap-y-2">
                             <p>TOO ”АЙ ЭЛЕКТРО ЛИН”</p>
@@ -54,7 +30,7 @@
                     </div>
                 </div>
                 <div class="flex items-center justify-center flex-col order-2 ">
-                    <NuxtLink class="flex items-center gap-x-4" to="/">
+                    <NuxtLink class="flex items-center gap-x-1 sm:gap-x-4" to="/">
 
                         <svg xmlns="http://www.w3.org/2000/svg" width="85" height="48" viewBox="0 0 85 48" fill="none">
                             <g clip-path="url(#clip0_325_184)">
@@ -134,7 +110,8 @@
                                 </clipPath>
                             </defs>
                         </svg>
-                        <p class="text-lg sm:text-2xl font-semibold">Zere construction</p>
+
+                        <p class="text-base sm:text-2xl font-semibold">Zere construction</p>
                     </NuxtLink>
                     <div
                         class="flex sm:flex-row flex-col gap-y-4 sm:gap-y-0 pt-6 sm:pt-10 gap-x-6 text-base text-black">
@@ -200,7 +177,7 @@
                 </ul>
             </div>
         </div>
-    </div>
+    </footer>
 </template>
 
 <style scoped lang="css"></style>

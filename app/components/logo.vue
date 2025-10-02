@@ -4,7 +4,7 @@
 
 <template>
     <NuxtLink to="/">
-        <span class="flex md:hidden items-center gap-x-2.5 pt-2.5  ">
+        <span class="flex md:hidden items-center gap-x-2.5   ">
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30px"
                 height="30px" viewBox="0 0 30 30" version="1.1">
                 <g id="surface1">

@@ -27,16 +27,18 @@
 
                     </div>
 
-                    <div class="flex flex-col gap-y-6">
-                        <div class="flex flex-col gap-y-4 border border-violet rounded-lg py-2 px-4">
-                            <p class="font-semibold text-2xl">Комплектующие от мировых брендов</p>
-                            <p class="text-base text-black">В случае любых неполадок, мы обеспечим вам быстрый ремонт
+                    <div class="flex flex-col gap-y-4 sm:gap-y-6">
+                        <div class="flex flex-col gap-y-2.5 sm:gap-y-4 border border-violet rounded-lg py-2 px-4">
+                            <p class="font-semibold text-lg sm:text-2xl">Комплектующие от мировых брендов</p>
+                            <p class="text-sm sm:text-base text-black">В случае любых неполадок, мы обеспечим вам
+                                быстрый ремонт
                                 или замену без дополнительных
                                 затрат.</p>
                         </div>
-                        <div class="flex flex-col gap-y-4  border border-violet rounded-lg py-2 px-4">
-                            <p class="font-semibold text-2xl">Гарантируем надежность и безопасность</p>
-                            <p class="text-base text-black">Мы уверены в качестве каждого компонента и предоставляем
+                        <div class="flex flex-col gap-y-2.5 sm:gap-y-4  border border-violet rounded-lg py-2 px-4">
+                            <p class="font-semibold text-lg sm:text-2xl">Гарантируем надежность и безопасность</p>
+                            <p class="text-sm sm:text-base text-black">Мы уверены в качестве каждого компонента и
+                                предоставляем
                                 расширенную гарантию на
                                 комплектующие и оборудование. </p>
                         </div>
