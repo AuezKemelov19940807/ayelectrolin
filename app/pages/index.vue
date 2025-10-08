@@ -20,9 +20,10 @@ import Zere from '~/components/Zere.vue';
 
     <Zere class="mb-18 md:mb-48" />
 
-
+    <Projects class="mb-18 md:mb-48" />
 
     <ContactForm class="mb-18 md:mb-30" />
+    <!-- <Map /> -->
 
 </template>
 <style scoped lang="css">
@@ -36,7 +37,7 @@ import Zere from '~/components/Zere.vue';
     background: url('../assets/img/vector.png') no-repeat;
     width: 2755.9433212685367px;
     height: 2113.6398633527997px;
-    z-index: -10;
+
     top: -260px;
 
     @media(max-width: 1024px) {

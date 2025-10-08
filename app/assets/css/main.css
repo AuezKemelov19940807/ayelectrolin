@@ -15,10 +15,14 @@ html,
 body,
 #__nuxt {
     font-family: "Montserrat", sans-serif;
-    @apply h-full overflow-x-hidden font-medium;
+    @apply h-full overflow-x-hidden font-medium bg-[#F5F9FF];
 }
 
 .container {
   @apply w-full max-w-[1600px] mx-auto px-4 md:px-5;
        
 }
+
+
+
+

@@ -25,10 +25,6 @@ const { open } = useModal()
                             src="~/assets/img/banner.webp" alt="Banner Image">
                     </div>
                 </div>
-
-
-
-
             </div>
         </div>
     </div>

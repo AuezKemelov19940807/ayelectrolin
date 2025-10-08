@@ -4,6 +4,26 @@ export default defineNuxtConfig({
   css: ["~/assets/css/main.css"],
   devtools: { enabled: true },
 
+  app: {
+    head: {
+      script: [
+        {
+          src: "https://www.googletagmanager.com/gtag/js?id=AW-16772821022",
+          async: true,
+        },
+        {
+          type: "text/javascript",
+          innerHTML: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-16772821022');
+          `,
+        },
+      ],
+    },
+  },
+
   vite: {
     plugins: [tailwindcss()],
   },
@@ -20,23 +40,12 @@ export default defineNuxtConfig({
     // lazy: true,
   },
 
-  // i18n: {
-  //   locales: [
-  //     { code: "en", iso: "en-US", name: "English", file: "en.json" },
-  //     { code: "ru", iso: "ru-RU", name: "Русский", file: "ru.json" },
-  //     { code: "kk", iso: "kk-KK", name: "Қазақша", file: "kk.json" },
-  //   ],
-  //   defaultLocale: "ru",
-
-  //   strategy: "prefix",
-  //   detectBrowserLanguage: {
-  //     useCookie: true,
-  //     cookieKey: "i18n_redirected",
-  //     alwaysRedirect: true,
-  //     fallbackLocale: "ru",
-  //   },
-  //   // Ensure this points to the correct file or object
-  // },
-
   modules: ["@nuxt/fonts", "@nuxtjs/i18n", "nuxt-swiper"],
+
+  plugins: [
+    {
+      src: "~/plugins/2gis-map.js",
+      mode: "client",
+    },
+  ],
 });

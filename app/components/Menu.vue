@@ -7,7 +7,7 @@
         <ul
             class="flex gap-y-6 text-2xl text-violet md:text-black md:text-lg font-semibold md:font-medium flex-col md:flex-row gap-x-6">
             <li>
-                <NuxtLink class="underline" to="/"> {{ $t('catalog') }} </NuxtLink>
+                <NuxtLink class="underline" :to="$localePath('/catalog')"> {{ $t('catalog') }} </NuxtLink>
             </li>
         </ul>
     </nav>

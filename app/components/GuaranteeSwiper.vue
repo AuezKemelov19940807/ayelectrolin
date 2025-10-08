@@ -29,6 +29,7 @@ const selectedImage = ref<string | null>(null)
 const selectedImageRef = ref<HTMLElement | null>(null)
 
 const openModal = (img: string) => {
+    console.log('1')
     selectedImage.value = img
     showModal.value = true
 }
@@ -38,22 +39,52 @@ const closeModal = () => {
 }
 
 
-// Следим за активным слайдом
+let cleanupListeners: (() => void) | null = null
+
 watch(swiperRef, (swiper) => {
-    if (swiper) {
-        swiper.swiper.on("slideChange", () => {
-            activeIndex.value = swiper.swiper.realIndex
-        })
+    // remove old listeners
+    if (cleanupListeners) {
+        cleanupListeners()
+        cleanupListeners = null
+    }
+    if (!swiper) return
+
+    const s = swiper.swiper
+
+    const onSlideChange = () => {
+        activeIndex.value = s.realIndex
     }
 
+    const onTap = (swiperInstance: any) => {
+        // debug: раскомментируй если нужно
+        // console.log('tap', swiperInstance.clickedIndex, swiperInstance.clickedSlide, swiperInstance.realIndex)
 
-    // swiper.swiper.on("tap", () => {
-    //     const idx = swiper.swiper.clickedIndex;
-    //     if (idx === swiper.swiper.realIndex) {
-    //         openModal(guaranteeItems[idx].image)
-    //     }
-    // });
+        const clickedSlide = swiperInstance.clickedSlide
+        let idx = -1
+        if (clickedSlide) {
+            // безопасно находим индекс DOM-элемента в s.slides
+            idx = Array.prototype.indexOf.call(s.slides, clickedSlide)
+        }
+        if (idx === -1) {
+            idx = swiperInstance.clickedIndex ?? s.realIndex
+        }
 
+        if (idx !== -1 && guaranteeItems[idx]) {
+            openModal(guaranteeItems[idx].image)
+        }
+    }
+
+    s.on('slideChange', onSlideChange)
+    s.on('tap', onTap)
+
+    cleanupListeners = () => {
+        s.off('slideChange', onSlideChange)
+        s.off('tap', onTap)
+    }
+})
+
+onUnmounted(() => {
+    if (cleanupListeners) cleanupListeners()
 })
 
 onClickOutside(selectedImageRef, closeModal)
@@ -93,7 +124,8 @@ onClickOutside(selectedImageRef, closeModal)
                         }
                     }
                 }">
-                <swiper-slide v-for="(slide, idx) in guaranteeItems" :key="slide.id" @click="openModal(slide.image)">
+                <swiper-slide class="guarantee" v-for="slide in guaranteeItems" :key="slide.id"
+                    @click="openModal(slide.image)">
                     <img class="shadow-md w-full h-full " :src="slide.image" alt="Swiper Image">
                 </swiper-slide>
             </swiper-container>
