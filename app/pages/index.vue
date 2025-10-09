@@ -1,9 +1,4 @@
 <script setup lang="ts">
-import Zere from '~/components/Zere.vue';
-
-
-
-
 </script>
 
 <template>
@@ -13,18 +8,12 @@ import Zere from '~/components/Zere.vue';
     </div>
     <Priority class="mb-18 md:pt-24 lg:mb-28" />
     <Guarantee class="mb-18 md:mb-40" />
-
     <Brands class="mb-18 md:mb-48" />
-
     <Feedback class="mb-18 md:mb-48" />
-
     <Zere class="mb-18 md:mb-48" />
-
     <Projects class="mb-18 md:mb-48" />
-
     <ContactForm class="mb-18 md:mb-30" />
     <!-- <Map /> -->
-
 </template>
 <style scoped lang="css">
 .bg {
@@ -37,22 +26,14 @@ import Zere from '~/components/Zere.vue';
     background: url('../assets/img/vector.png') no-repeat;
     width: 2755.9433212685367px;
     height: 2113.6398633527997px;
-
     top: -260px;
 
     @media(max-width: 1024px) {
-
         top: -700px;
-
     }
 
     @media(max-width: 768px) {
-
         top: -800px;
-
     }
-
-
-
 }
 </style>

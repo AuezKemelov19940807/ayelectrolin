@@ -42,7 +42,7 @@ const closeModal = () => {
 let cleanupListeners: (() => void) | null = null
 
 watch(swiperRef, (swiper) => {
-    // remove old listeners
+
     if (cleanupListeners) {
         cleanupListeners()
         cleanupListeners = null
@@ -56,9 +56,6 @@ watch(swiperRef, (swiper) => {
     }
 
     const onTap = (swiperInstance: any) => {
-        // debug: раскомментируй если нужно
-        // console.log('tap', swiperInstance.clickedIndex, swiperInstance.clickedSlide, swiperInstance.realIndex)
-
         const clickedSlide = swiperInstance.clickedSlide
         let idx = -1
         if (clickedSlide) {
@@ -131,8 +128,6 @@ onClickOutside(selectedImageRef, closeModal)
             </swiper-container>
         </ClientOnly>
     </div>
-
-
     <Transition name="slide-fade">
         <div v-if="showModal"
             class="fixed w-full z-50 h-full left-0 top-0 before:absolute before:w-full before:h-full before:bg-black before:left-0 before:top-0 before:z-10 before:opacity-50">
@@ -150,9 +145,6 @@ onClickOutside(selectedImageRef, closeModal)
 
         </div>
     </Transition>
-
-
-
 </template>
 
 <style scoped>

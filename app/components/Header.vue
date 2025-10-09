@@ -91,10 +91,6 @@ const { open } = useModal()
         </div>
         <BurgerMenu :activeMenuBurger="activeMenuBurger" />
     </header>
-
-
-
-
 </template>
 
 <style scoped lang="css">

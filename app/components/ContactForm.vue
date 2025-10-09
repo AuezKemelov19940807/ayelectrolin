@@ -1,35 +1,5 @@
 <script setup lang="ts">
 
-// const long = ref('76.934604');
-// const lat = ref('43.226518');
-
-// const initMap = () => {
-//     if (typeof DG !== 'undefined') {
-//         const map = DG.map('map', {
-//             center: [lat.value, long.value],
-//             zoom: 15,
-//         });
-//         DG.marker([lat.value, long.value]).addTo(map);
-//     } else {
-//         console.error('DG is not defined');
-//     }
-// };
-
-// onMounted(() => {
-//     const script = document.createElement('script');
-//     script.src = 'https://maps.api.2gis.ru/2.0/loader.js?pkg=full';
-//     script.async = true;
-//     script.defer = true;
-
-//     // Инициализация карты после загрузки скрипта
-//     script.onload = () => {
-//         initMap();
-//     };
-
-//     // Добавление скрипта в head документа
-//     document.head.appendChild(script);
-// });
-
 </script>
 
 <template>
@@ -61,23 +31,10 @@
                 </div>
                 <div class="flex-1 w-full flex flex-col md:flex-1 gap-y-4 md:gap-y-7.5">
                     <div class="w-full">
-
-
-                        <!-- <div id="map" class="w-full h-[325px]">
-
-                        </div> -->
-
                         <iframe class="rounded-lg"
                             src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1325.3355045707297!2d76.76667899698853!3d43.2220360738941!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2skz!4v1759331762036!5m2!1sen!2skz"
                             width="100%" height="325" style="border:0;" loading="lazy"
                             referrerpolicy="no-referrer-when-downgrade"></iframe>
-
-
-                        <!-- <iframe class="rounded-lg"
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2906.641473810303!2d76.88028687680439!3d43.23797607112483!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x388369000130ca87%3A0x272dbfaea4258e7e!2z0JHQsNC7LdCx0LDQu9CwMSDQsdOp0LHQtdC60LbQsNC5INCx0LDQu9Cw0LHQsNKb0YjQsNGB0Ys!5e0!3m2!1sen!2skz!4v1759166655478!5m2!1sen!2skz"
-                            width="100%" height="325" style="border:0;" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"></iframe> -->
-
                     </div>
                     <div class="border border-violet p-6 rounded-lg flex flex-col gap-y-4 md:gap-y-8.5">
                         <p class="text-2xl font-semibold text-violet">Головной офис</p>

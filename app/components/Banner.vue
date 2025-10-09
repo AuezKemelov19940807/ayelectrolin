@@ -6,7 +6,7 @@ const { open } = useModal()
 </script>
 
 <template>
-    <div class="flex   mt-30 md:mt-0 lg:pt-0 items-center">
+    <section class="flex mt-30 md:mt-0 lg:pt-0 items-center">
         <div class="container">
             <div class="flex flex-col-reverse gap-y-10 lg:gap-y-0 lg:flex-row items-center justify-between  gap-x-10 ">
                 <div class="max-w-4xl flex flex-col  items-center lg:items-start gap-y-4">
@@ -19,26 +19,30 @@ const { open } = useModal()
                     </p>
                     <ApplicationForm text="Оставить заявку" @click="open" />
                 </div>
-                <div class="relative bg mr-14 md:mr-20 ">
-                    <div class=" w-full h-full max-w-[700px] max-h-[600px]   -z-10 ">
+                <div class="relative bg mr-14 md:mr-20">
+                    <div class=" w-full h-full max-w-[700px] max-h-[600px]">
                         <img class="w-full h-full object-cover  md:min-w-[700px] md:min-h-[600px] left-0 top-0"
                             src="~/assets/img/banner.webp" alt="Banner Image">
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-
+    </section>
 </template>
 
 <style scoped lang="css">
+.bg {
+    position: relative;
+    z-index: 2;
+}
+
 .bg::before {
     content: '';
     position: absolute;
     background: url('../assets/img/ellipse.png') no-repeat;
     width: 494px;
     height: 494px;
-    z-index: -10;
+    z-index: -1;
     left: 50%;
     margin: 35px 0px 0px 110px;
     top: 50%;

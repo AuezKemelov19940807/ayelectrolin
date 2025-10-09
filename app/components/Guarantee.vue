@@ -4,12 +4,10 @@
 <template>
     <div>
         <div class="container">
-
-
             <div
                 class="flex flex-col-reverse xl:flex-row gap-y-6 md:gap-y-10 justify-between items-center gap-x-10 2xl:gap-x-40">
                 <div class="flex-1/2 max-w-[718px]">
-                    <div class="flex  justify-center sm:justify-start gap-x-1 sm:hidden ">
+                    <div class="flex  justify-center sm:justify-start gap-x-1 mb-4 sm:hidden ">
                         <span class="w-12 h-12 md:w-18 md:h-18">
                             <img src="~/assets/img/st.webp" alt="">
                         </span>
@@ -24,9 +22,7 @@
                         </span>
                         <h2 class="font-bold  text-left -mt-3 text-[45px] ">
                             Гарантируем качество </h2>
-
                     </div>
-
                     <div class="flex flex-col gap-y-4 sm:gap-y-6">
                         <div class="flex flex-col gap-y-2.5 sm:gap-y-4 border border-violet rounded-lg py-2 px-4">
                             <p class="font-semibold text-lg sm:text-2xl">Комплектующие от мировых брендов</p>

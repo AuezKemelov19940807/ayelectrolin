@@ -55,11 +55,6 @@ const swiper = useSwiper(containerRef, {
                         </swiper-container>
                     </ClientOnly>
                 </div>
-
-
-                <!-- Go back one slide -->
-
-                <!-- Go forward one slide -->
                 <button class="cursor-pointer absolute right-0 top-1/2 -translate-y-1/2 hidden lg:block"
                     @click="swiper.next()">
                     <svg xmlns="http://www.w3.org/2000/svg" width="48" height="49" viewBox="0 0 49 49" fill="none">
@@ -71,8 +66,6 @@ const swiper = useSwiper(containerRef, {
                     </svg>
                 </button>
             </div>
-
-
         </div>
     </div>
 </template>

@@ -1,7 +1,3 @@
-<script setup lang="ts">
-
-</script>
-
 <template>
     <div>
         <div class="container">
@@ -37,12 +33,7 @@
                                 </div>
                             </div>
                         </div>
-
-
-
                     </div>
-
-
                 </div>
                 <div class="basis-3/5 w-full">
                     <div class="flex flex-col gap-y-2.5 md:gap-y-4 lg:gap-y-6">
@@ -76,89 +67,8 @@
                     </div>
                 </div>
             </div>
-            <!-- <div class="parent">
-                <div class="div1">
-                    <UITitle class="mb-6" title="Выполненные проекты" />
-                    <p>
-                        Ай Электро Лин реализует надёжные и индивидуальные решения по сборке электрощитов для
-                        промышленных, коммерческих и жилых объектов.
-                    </p>
-                </div>
-                <div class="div2  relative">
-                    <img class=" rounded-[30px]   w-full h-full object-cover" src="~/assets/img/project-2.png" alt="">
-                </div>
-                <div class="div4">
-                    <img class="w-full h-full object-cover" src="~/assets/img/project-2.png" alt="">
-                </div>
-                <div class="div5">
-                    <img class="w-full h-full object-cover" src="~/assets/img/project-2.png" alt="">
-                </div>
-                <div class="div8">
-                    <img class="w-full h-full object-cover" src="~/assets/img/project-2.png" alt="">
-                </div>
-                <div class="div9">
-                    <img class="w-full h-full object-cover" src="~/assets/img/project-2.png" alt="">
-                </div>
-                <div class="div10">
-                    <img class="w-full h-full object-cover" src="~/assets/img/project-2.png" alt="">
-                </div>
-            </div> -->
-
         </div>
     </div>
 </template>
 
-<style scoped lang="css">
-.parent {
-    display: grid;
-    grid-template-columns: repeat(10, 1fr);
-    grid-template-rows: repeat(7, 1fr);
-    gap: 24px;
-}
-
-.div1 {
-    grid-column: span 3 / span 3;
-    grid-row: span 2 / span 2;
-}
-
-.div2 {
-    grid-column: span 3 / span 3;
-    grid-row: span 3 / span 3;
-    grid-column-start: 4;
-}
-
-.div4 {
-    grid-column: span 3 / span 3;
-    grid-row: span 3 / span 3;
-    grid-column-start: 1;
-    grid-row-start: 3;
-}
-
-.div5 {
-    grid-column: span 3 / span 3;
-    grid-row: span 2 / span 2;
-    grid-column-start: 1;
-    grid-row-start: 6;
-}
-
-.div8 {
-    grid-column: span 4 / span 4;
-    grid-row: span 3 / span 3;
-    grid-column-start: 7;
-    grid-row-start: 1;
-}
-
-.div9 {
-    grid-column: span 4 / span 4;
-    grid-row: span 4 / span 4;
-    grid-column-start: 4;
-    grid-row-start: 4;
-}
-
-.div10 {
-    grid-column: span 3 / span 3;
-    grid-row: span 4 / span 4;
-    grid-column-start: 8;
-    grid-row-start: 4;
-}
-</style>
+<style scoped lang="css"></style>

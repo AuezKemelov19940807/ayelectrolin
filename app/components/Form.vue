@@ -37,9 +37,6 @@ onMounted(async () => {
         </p>
         <form action="" method="post" class="flex  flex-col gap-y-4 md:gap-y-6">
             <label for="">
-
-
-
                 <input
                     class="border border-violet rounded-2xl md:rounded-3xl p-2.5 md:p-4 w-full focus:outline-none  md:text-lg "
                     type="tel" id="check-up-phone-input" placeholder="+7 (___) ___ __ __">

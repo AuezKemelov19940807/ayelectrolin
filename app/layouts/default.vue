@@ -1,6 +1,14 @@
-<script lang="ts">
+<script setup lang="ts">
 
 
+const route = useRoute()
+
+watch(
+    () => route.fullPath,
+    () => {
+        window.scrollTo({ top: 0, behavior: "instant" })
+    }
+)
 </script>
 
 <template>

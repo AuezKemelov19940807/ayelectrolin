@@ -20,10 +20,7 @@ const props = defineProps<{
             {{ name }}
 
         </p>
-
-
     </div>
-
 </template>
 
 <style scoped lang="css"></style>

@@ -16,7 +16,6 @@
                     </NuxtLink>
                 </div>
                 <div class="grid xl:grid-cols-2 gap-y-8 gap-x-11">
-
                     <div
                         class="flex flex-col h-full gap-y-4 border-t xl:border-none pt-4 xl:pt-0 border-violet xl:max-w-96 relative xl:before:absolute xl:before:left-0 xl:before:-bottom-4 xl:before:w-[580px] xl:before:h-[1px] xl:before:bg-violet   ">
                         <p class="text-2xl font-semibold flex-1 flex gap-x-2.5 items-center "> <span>
@@ -94,7 +93,6 @@
                         каталог
                     </NuxtLink>
                 </div>
-
             </div>
         </div>
     </div>

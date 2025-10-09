@@ -29,15 +29,15 @@ export default defineNuxtConfig({
   },
 
   i18n: {
-    strategy: "prefix", // теперь префиксы у всех языков
+    // strategy: "prefix_except_default",
     defaultLocale: "ru",
+    // detectBrowserLanguage: false,
     locales: [
       { code: "ru", iso: "ru-RU", name: "Русский", file: "ru.json" },
       { code: "en", iso: "en-US", name: "English", file: "en.json" },
       { code: "kk", iso: "kk-KK", name: "Қазақша", file: "kk.json" },
     ],
     langDir: "locales/",
-    // lazy: true,
   },
 
   modules: ["@nuxt/fonts", "@nuxtjs/i18n", "nuxt-swiper"],
