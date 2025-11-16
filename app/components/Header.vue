@@ -63,7 +63,8 @@ const { open } = useModal()
                             </svg>
                         </a>
 
-                        <a href="">
+                        <a href="https://api.whatsapp.com/send/?phone=77478544725&text&type=phone_number&app_absent=0"
+                            target="_blank">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48px" height="48px"
                                 fill-rule="evenodd" clip-rule="evenodd">
                                 <path fill="#fff"
@@ -81,13 +82,10 @@ const { open } = useModal()
                         </a>
                     </ul>
                     <Menu />
-                    <ApplicationForm text="Заказать звонок" @click="open" />
+                    <ApplicationForm :text="$t('order_callback')" @click="open" />
                     <Lang />
-
-
                 </div>
             </div>
-
         </div>
         <BurgerMenu :activeMenuBurger="activeMenuBurger" />
     </header>

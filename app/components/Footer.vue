@@ -1,31 +1,38 @@
 <script setup lang="ts">
 
+
+const { data } = await useContact()
+const { data: footer } = await useFooter()
 </script>
 
 <template>
-    <footer class="border-t border-violet pt-6 sm:pt-10 pb-6 sm:pb-10">
+
+    <footer class="border-t border-violet pt-6 sm:pt-10 pb-6 sm:pb-10" v-if="footer && data">
+
         <div class="container">
             <div
                 class="2xl:flex grid lg:grid-cols-2 gap-y-6 sm:gap-y-10 gap-x-5 items-center justify-center place-content-center 2xl:justify-between">
-                <div class="flex gap-x-2 xs:gap-x-4 order-4 2xl:order-1 items-center justify-center ">
-                    <p class="text-xs xs:text-sm text-black">Copyright 2025</p>
-                    <a class="text-xs xs:text-sm text-black underline relative before:w-[1px] before:h-full before:rounded-full before:bg-black before:left-0 before:top-0 before:absolute pl-2 xs:pl-4  "
-                        href="">Privacy Policy</a>
-                    <a class="text-xs xs:text-sm text-black underline relative before:w-[1px] before:h-full before:rounded-full before:bg-black before:left-0 before:top-0 before:absolute pl-2 xs:pl-4"
-                        href="">Cookie Policy</a>
+                <div
+                    class="flex flex-col md:flex-row gap-y-4 gap-x-2 xs:gap-x-4 order-4 2xl:order-1 items-center justify-center ">
+                    <p class="text-xs xs:text-sm text-black"> {{ footer.copy }} </p>
+                    <a class="text-xs xs:text-sm text-black underline relative before:w-[1px] before:h-full before:rounded-full md:before:bg-black before:left-0 before:top-0 before:absolute pl-2 xs:pl-4  "
+                        :href="footer.privacy_policy.link" target="_blank"> {{ footer.privacy_policy.text }} </a>
+                    <a class="text-xs xs:text-sm text-black underline relative before:w-[1px] before:h-full before:rounded-full md:before:bg-black before:left-0 before:top-0 before:absolute pl-2 xs:pl-4"
+                        :href="footer.cookie_policy.link" target="_blank"> {{ footer.cookie_policy.text }} </a>
                 </div>
                 <div class="flex items-center justify-center flex-col order-1  2xl:order-2">
                     <Logo />
                     <div class="flex sm:flex-row flex-col gap-y-4 pt-6 sm:pt-10 gap-x-6 text-base text-black">
                         <div class="flex flex-col gap-y-2">
-                            <p>TOO ”АЙ ЭЛЕКТРО ЛИН”</p>
-                            <a href="https://maps.google.com/?q=43.23797607112483,76.88028687680439"
-                                target="_blank">пр-т.
-                                Абая 5/1, г. Алматы</a>
+                            <p>{{ data.ayelectrolin.name }}</p>
+                            <a :href="`https://2gis.kz/almaty/geo/9430047375103632/${data.coordinates.lat}?m=${data.coordinates.lat}&utm_source=bigMap&utm_medium=widget-source&utm_campaign=firmsonmap`"
+                                target="_blank">
+                                {{ data.ayelectrolin.address }}
+                            </a>
                         </div>
                         <div class="flex flex-col gap-y-2 items-center justify-center sm:justify-start sm:items-start">
-                            <a href="tel:+77478544725">+7 747 854 47 25</a>
-                            <a href="mailto:ayelectrolin@mail.ru">ayelectrolin@mail.ru</a>
+                            <a :href="`tel:${data.ayelectrolin.number}`"> {{ data.ayelectrolin.number }} </a>
+                            <a :href="`mailto:${data.ayelectrolin.email}`"> {{ data.ayelectrolin.email }} </a>
                         </div>
                     </div>
                 </div>
@@ -111,67 +118,28 @@
                             </defs>
                         </svg>
 
-                        <p class="text-base sm:text-2xl font-semibold">Zere construction</p>
+                        <p class="text-base sm:text-2xl font-semibold"> {{ data.zere_construction.name }} </p>
                     </NuxtLink>
                     <div
                         class="flex sm:flex-row flex-col gap-y-4 sm:gap-y-0 pt-6 sm:pt-10 gap-x-6 text-base text-black">
                         <div class="flex flex-col gap-y-2 items-center justify-center sm:items-start sm:justify-start">
-                            <p>TOO ”Zere construction ltd”</p>
-                            <a href="https://maps.google.com/?q=43.23797607112483,76.88028687680439"
-                                target="_blank">пр-т.
-                                Абая 5/1, г. Алматы</a>
+                            <p>{{ data.zere_construction.name }}</p>
+                            <a :href="`https://2gis.kz/almaty/geo/9430047375103632/${data.coordinates.lat}?m=${data.coordinates.lat}&utm_source=bigMap&utm_medium=widget-source&utm_campaign=firmsonmap`"
+                                target="_blank">
+                                {{ data.zere_construction.address }}
+                            </a>
                         </div>
                         <div class="flex flex-col gap-y-2 items-center justify-center sm:items-start sm:justify-start">
-                            <a href="tel:+77023087521">+7 702 308 75 215</a>
-                            <a href="mailto:toozereltd@mail.ru">toozereltd@mail.ru</a>
+                            <a :href="`tel:${data.zere_construction.number}`">{{ data.zere_construction.number }}</a>
+                            <a :href="`mailto:${data.zere_construction.email}`"> {{ data.zere_construction.email }} </a>
                         </div>
                     </div>
                 </div>
                 <ul class="flex gap-x-4 order-3 items-center justify-center">
-                    <li>
-                        <a href="">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M18.403 5.63303C17.5713 4.79596 16.5818 4.13222 15.4918 3.68025C14.4018 3.22829 13.233 2.99708 12.053 3.00003C7.105 3.00003 3.077 7.02703 3.075 11.977C3.075 13.559 3.488 15.103 4.273 16.465L3 21.116L7.759 19.867C9.07569 20.5829 10.5503 20.9586 12.049 20.96H12.053C17 20.96 21.028 16.933 21.03 11.983C21.0332 10.8035 20.8027 9.63512 20.3518 8.54522C19.9009 7.45531 19.2385 6.46553 18.403 5.63303ZM12.053 19.445H12.05C10.7135 19.445 9.40171 19.0854 8.252 18.404L7.98 18.242L5.156 18.983L5.909 16.23L5.732 15.948C4.98489 14.7584 4.58934 13.3818 4.591 11.977C4.593 7.86303 7.94 4.51603 12.056 4.51603C13.0364 4.51313 14.0075 4.70506 14.9131 5.08067C15.8186 5.45628 16.6405 6.00809 17.331 6.70403C18.0256 7.39607 18.5762 8.21892 18.9509 9.12503C19.3256 10.0311 19.517 11.0025 19.514 11.983C19.512 16.097 16.165 19.445 12.053 19.445ZM16.146 13.856C15.921 13.743 14.819 13.201 14.613 13.126C14.407 13.051 14.259 13.014 14.109 13.238C13.959 13.462 13.529 13.967 13.398 14.117C13.267 14.267 13.136 14.285 12.912 14.173C12.688 14.061 11.965 13.824 11.108 13.06C10.441 12.465 9.991 11.731 9.86 11.506C9.729 11.281 9.846 11.16 9.959 11.048C10.06 10.948 10.183 10.786 10.295 10.655C10.407 10.524 10.444 10.431 10.519 10.281C10.594 10.131 10.557 10 10.5 9.88803C10.444 9.77503 9.995 8.67103 9.808 8.22203C9.627 7.78703 9.442 7.84503 9.304 7.83903C9.16107 7.83329 9.01804 7.83063 8.875 7.83103C8.7613 7.83416 8.64946 7.86064 8.54641 7.9088C8.44337 7.95697 8.35133 8.0258 8.276 8.11103C8.07 8.33603 7.491 8.87803 7.491 9.98203C7.491 11.086 8.295 12.153 8.407 12.303C8.519 12.453 9.989 14.718 12.239 15.69C12.775 15.921 13.193 16.059 13.518 16.163C14.055 16.334 14.544 16.309 14.931 16.252C15.362 16.188 16.258 15.71 16.445 15.186C16.632 14.662 16.632 14.213 16.576 14.119C16.52 14.025 16.369 13.968 16.146 13.856Z"
-                                    fill="#6E3F88" />
-                            </svg>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none">
-                                <path
-                                    d="M13.397 20.9968V12.8008H16.162L16.573 9.59176H13.397V7.54776C13.397 6.62176 13.655 5.98776 14.984 5.98776H16.668V3.12676C15.8487 3.03825 15.0251 2.99585 14.201 2.99976C11.757 2.99976 10.079 4.49176 10.079 7.23076V9.58576H7.33203V12.7948H10.085V20.9968H13.397Z"
-                                    fill="#6E3F88" />
-                            </svg>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none">
-                                <path
-                                    d="M11.999 7.37695C10.7726 7.37695 9.59651 7.86412 8.72934 8.73129C7.86217 9.59846 7.375 10.7746 7.375 12.001C7.375 13.2273 7.86217 14.4034 8.72934 15.2706C9.59651 16.1378 10.7726 16.625 11.999 16.625C13.2254 16.625 14.4015 16.1378 15.2687 15.2706C16.1358 14.4034 16.623 13.2273 16.623 12.001C16.623 10.7746 16.1358 9.59846 15.2687 8.73129C14.4015 7.86412 13.2254 7.37695 11.999 7.37695ZM11.999 15.004C11.6045 15.004 11.2139 14.9263 10.8494 14.7753C10.485 14.6243 10.1538 14.403 9.87485 14.1241C9.5959 13.8452 9.37463 13.514 9.22367 13.1495C9.0727 12.7851 8.995 12.3944 8.995 12C8.995 11.6055 9.0727 11.2148 9.22367 10.8504C9.37463 10.4859 9.5959 10.1548 9.87485 9.8758C10.1538 9.59686 10.485 9.37558 10.8494 9.22462C11.2139 9.07365 11.6045 8.99595 11.999 8.99595C12.7957 8.99595 13.5598 9.31245 14.1231 9.8758C14.6865 10.4392 15.003 11.2032 15.003 12C15.003 12.7967 14.6865 13.5607 14.1231 14.1241C13.5598 14.6875 12.7957 15.004 11.999 15.004Z"
-                                    fill="#6E3F88" />
-                                <path
-                                    d="M16.806 8.28491C17.4014 8.28491 17.884 7.80227 17.884 7.20691C17.884 6.61154 17.4014 6.12891 16.806 6.12891C16.2107 6.12891 15.728 6.61154 15.728 7.20691C15.728 7.80227 16.2107 8.28491 16.806 8.28491Z"
-                                    fill="#6E3F88" />
-                                <path
-                                    d="M20.533 6.11088C20.3017 5.51291 19.948 4.96987 19.4946 4.51661C19.0412 4.06335 18.498 3.70988 17.9 3.47888C17.2003 3.21613 16.4611 3.07411 15.714 3.05888C14.751 3.01688 14.446 3.00488 12.004 3.00488C9.56195 3.00488 9.24895 3.00488 8.29395 3.05888C7.54744 3.07433 6.80895 3.21635 6.10995 3.47888C5.51189 3.70988 4.96872 4.06335 4.51529 4.51661C4.06186 4.96987 3.70818 5.51291 3.47695 6.11088C3.21454 6.81057 3.07286 7.54975 3.05795 8.29688C3.01495 9.25888 3.00195 9.56388 3.00195 12.0069C3.00195 14.4499 3.00195 14.7599 3.05795 15.7169C3.07295 16.4649 3.21395 17.2029 3.47695 17.9039C3.70829 18.502 4.06212 19.0451 4.51573 19.4983C4.96934 19.9516 5.5127 20.305 6.11095 20.5359C6.80848 20.8088 7.54736 20.961 8.29595 20.9859C9.25895 21.0279 9.56395 21.0409 12.006 21.0409C14.448 21.0409 14.761 21.0409 15.716 20.9859C16.4631 20.971 17.2023 20.8293 17.902 20.5669C18.5001 20.3358 19.0433 19.9821 19.4968 19.5287C19.9502 19.0753 20.3038 18.532 20.535 17.9339C20.798 17.2339 20.939 16.4959 20.954 15.7479C20.997 14.7859 21.01 14.4809 21.01 12.0379C21.01 9.59488 21.01 9.28488 20.954 8.32788C20.9419 7.57019 20.7995 6.82023 20.533 6.11088ZM19.315 15.6429C19.3094 16.2193 19.2041 16.7903 19.004 17.3309C18.8531 17.7193 18.6229 18.0721 18.3282 18.3667C18.0334 18.6613 17.6805 18.8912 17.292 19.0419C16.7571 19.24 16.1923 19.3452 15.622 19.3529C14.672 19.3969 14.404 19.4079 11.968 19.4079C9.52995 19.4079 9.28095 19.4079 8.31295 19.3529C7.74296 19.3451 7.17849 19.2399 6.64395 19.0419C6.25411 18.8921 5.89984 18.6625 5.60384 18.3678C5.30783 18.0732 5.0766 17.72 4.92495 17.3309C4.72877 16.7958 4.62364 16.2317 4.61395 15.6619C4.57095 14.7119 4.56095 14.4439 4.56095 12.0079C4.56095 9.57188 4.56095 9.32188 4.61395 8.35288C4.61966 7.77683 4.72488 7.2061 4.92495 6.66588C5.22995 5.87688 5.85495 5.25588 6.64395 4.95388C7.17849 4.75583 7.74296 4.65065 8.31295 4.64288C9.26395 4.59988 9.53095 4.58788 11.968 4.58788C14.405 4.58788 14.655 4.58788 15.622 4.64288C16.1923 4.65054 16.7571 4.75572 17.292 4.95388C17.6806 5.10464 18.0336 5.33474 18.3283 5.62951C18.6231 5.92427 18.8532 6.27724 19.004 6.66588C19.2001 7.20093 19.3053 7.76508 19.315 8.33488C19.358 9.28588 19.369 9.55288 19.369 11.9899C19.369 14.4269 19.369 14.6879 19.326 15.6439L19.315 15.6429Z"
-                                    fill="#6E3F88" />
-                            </svg>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none">
-                                <path
-                                    d="M20.665 3.71682L2.93497 10.5538C1.72497 11.0398 1.73197 11.7148 2.71297 12.0158L7.26497 13.4358L17.797 6.79082C18.295 6.48782 18.75 6.65082 18.376 6.98282L9.84297 14.6838H9.84097L9.84297 14.6848L9.52897 19.3768C9.98897 19.3768 10.192 19.1658 10.45 18.9168L12.661 16.7668L17.26 20.1638C18.108 20.6308 18.717 20.3908 18.928 19.3788L21.947 5.15082C22.256 3.91182 21.474 3.35082 20.665 3.71682Z"
-                                    fill="#6E3F88" />
-                            </svg>
+
+                    <li v-for="item in data.socials" :key="item.id">
+                        <a :href="item.link" target="_blank">
+                            <img :src="item.icon" :alt="item.platform" />
                         </a>
                     </li>
                 </ul>

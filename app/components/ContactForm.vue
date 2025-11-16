@@ -1,4 +1,32 @@
 <script setup lang="ts">
+import IMask from 'imask';
+const props = defineProps<{
+    consultation: MainConsultation
+}>()
+
+const { data } = await useContact()
+
+
+
+
+
+
+
+
+onMounted(async () => {
+    await nextTick(); // подождите пока DOM полностью обновится
+
+    const element = document.getElementById('check-up-phone-input');
+
+    if (element) {
+        const maskOptions = {
+            mask: '+{7}(000)000-00-00',
+        };
+        IMask(element, maskOptions);
+    } else {
+        console.error('Элемент с ID "check-up-phone-input" не найден');
+    }
+});
 
 </script>
 
@@ -7,38 +35,16 @@
         <div class="container">
             <div class="grid md:grid-cols-2 gap-y-6 gap-x-6 xl:gap-x-10 2xl:gap-x-30">
                 <div class="w-full lg:max-w-[650px]">
-                    <UITitle class="mb-10 text-center lg:text-left " title="Получите консультацию" />
-                    <form action="" method="post" class="flex  flex-col gap-y-4 md:gap-y-6">
-                        <label for="">
-                            <input class="border border-violet rounded-3xl p-4 w-full focus:outline-none  text-lg "
-                                type="tel" placeholder="Телефон">
-                        </label>
-                        <label for="">
-                            <input class="border border-violet rounded-3xl p-4 w-full focus:outline-none text-lg "
-                                type="text" placeholder="Ваше имя">
-                        </label>
-                        <textarea
-                            class="border border-violet rounded-3xl p-4 h-[200px] resize-none focus:outline-none text-lg "
-                            name="" id="" placeholder="Ваша заявка"></textarea>
-                        <button class="bg-violet text-white text-lg  py-4 font-medium rounded-4xl cursor-pointer">
-                            Отправить
-                        </button>
-                        <p class="opacity-70">
-                            Мы ответим в ближайшее время и предложим лучшее решение для вашего проекта.
-                        </p>
-
-                    </form>
+                    <UITitle class="mb-10 text-center lg:text-left " :title="consultation.title" />
+                    <ContactFormBlock :name_placeholder="consultation.name_placeholder"
+                        :message_placeholder="consultation.message_placeholder" :btn_text="consultation.btn_text"
+                        :note_text="consultation.note_text" />
                 </div>
                 <div class="flex-1 w-full flex flex-col md:flex-1 gap-y-4 md:gap-y-7.5">
-                    <div class="w-full">
-                        <iframe class="rounded-lg"
-                            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1325.3355045707297!2d76.76667899698853!3d43.2220360738941!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2skz!4v1759331762036!5m2!1sen!2skz"
-                            width="100%" height="325" style="border:0;" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div>
+                    <Map />
                     <div class="border border-violet p-6 rounded-lg flex flex-col gap-y-4 md:gap-y-8.5">
-                        <p class="text-2xl font-semibold text-violet">Головной офис</p>
-                        <a class="flex items-center gap-x-2.5" href="tel:+77478544725">
+                        <p class="text-2xl font-semibold text-violet"> {{ consultation.contact_info_text }} </p>
+                        <a class="flex items-center gap-x-2.5" :href="`tel:${data?.ayelectrolin.number}`">
                             <span>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 15 16"
                                     fill="none">
@@ -47,9 +53,9 @@
                                         stroke="#6E3F88" />
                                 </svg>
                             </span>
-                            <span class="font-medium text-black text-lg">+7 747 854 47 25</span>
+                            <span class="font-medium text-black text-lg"> {{ data?.ayelectrolin.number }} </span>
                         </a>
-                        <a class="flex items-center gap-x-2.5" href="mailto:ayelectrolin@mail.ru">
+                        <a class="flex items-center gap-x-2.5" :href="`mailto:${data?.ayelectrolin.email}`">
                             <span>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="14" viewBox="0 0 15 14"
                                     fill="none">
@@ -58,10 +64,11 @@
                                         stroke="#6E3F88" />
                                 </svg>
                             </span>
-                            <span class="font-medium text-black text-lg">ayelectrolin@mail.ru</span>
+                            <span class="font-medium text-black text-lg"> {{ data?.ayelectrolin.email }} </span>
                         </a>
                         <a class="flex md:items-center gap-x-2.5"
-                            href="https://maps.google.com/?q=43.23797607112483,76.88028687680439" target="_blank">
+                            :href="`https://2gis.kz/almaty/geo/9430047375103632/${data?.coordinates.lat}?m=${data?.coordinates.lat}&utm_source=bigMap&utm_medium=widget-source&utm_campaign=firmsonmap`"
+                            target="_blank">
                             <span>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="18" viewBox="0 0 13 18"
                                     fill="none">
@@ -73,8 +80,9 @@
                                         stroke="#6E3F88" stroke-linecap="square" />
                                 </svg>
                             </span>
-                            <span class="font-medium text-black text-lg">Г. Алматы, Алматинская область, Улица Абая,
-                                5/1</span>
+                            <span class="font-medium text-black text-lg">
+                                {{ data?.ayelectrolin.address }}
+                            </span>
                         </a>
                     </div>
                 </div>

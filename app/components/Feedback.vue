@@ -1,6 +1,12 @@
 <script setup lang="ts">
+
+const props = defineProps<{
+    review: MainReview
+}>()
+
+
 const containerRef = ref(null)
-const slides = ref(Array.from({ length: 10 }))
+const slides = ref(props.review.items)
 const swiper = useSwiper(containerRef, {
 
     loop: true,
@@ -17,12 +23,16 @@ const swiper = useSwiper(containerRef, {
 })
 
 
+
+
 </script>
 
 <template>
     <div>
         <div class="container">
-            <h4 class="text-2xl md:text-3xl font-bold text-center mb-6 md:mb-8">Отзывы наших клиентов</h4>
+            <h4 class="text-2xl md:text-3xl font-bold text-center mb-6 md:mb-8">
+                {{ review.title }}
+            </h4>
             <div class="relative">
                 <button class="cursor-pointer absolute hidden lg:block left-0 top-1/2 -translate-y-1/2 "
                     @click="swiper.prev()" type="button" aria-label="Previous slide">
@@ -38,18 +48,14 @@ const swiper = useSwiper(containerRef, {
                 <div class=" w-full max-w-[1300px] mx-auto">
                     <ClientOnly>
                         <swiper-container ref="containerRef" :init="false" class="w-full max-w-[1300px]">
-                            <swiper-slide v-for="(slide, idx) in slides" :key="idx">
+                            <swiper-slide v-for="slide in slides" :key="slide.id">
                                 <div class="flex flex-col items-center justify-center gap-y-4 md:gap-y-8">
                                     <p
                                         class="text-base md:text-2xl  leading-[130%] text-center  max-w-[800px] 2xl:max-w-full ">
-                                        “
-                                        Отличная компания!
-                                        Профессионалы
-                                        своего дела,
-                                        все вопросы
-                                        решают быстро и
-                                        грамотно. Очень доволен их работой, рекомендую всем! ”</p>
-                                    <p class="font-medium md:font-semibold text-lg md:text-2xl">Якубов Антон</p>
+                                        “ {{ slide.description }} ”</p>
+                                    <p class="font-medium md:font-semibold text-lg md:text-2xl">
+                                        {{ slide.fullname }}
+                                    </p>
                                 </div>
                             </swiper-slide>
                         </swiper-container>

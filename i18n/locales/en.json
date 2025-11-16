@@ -1,4 +1,17 @@
 {
+    "logo": "AY ELECTRO LIN",
     "catalog": "Catalog",
-    "submit_application": "Submit application"
+    "submit_application": "Submit application",
+    "order_callback": "Order a callback",
+    "your_name": "Your name",
+    "your_application": "Your application",
+    "submit": "Submit",
+    "message": "We will respond shortly and offer the best solution for your project.",
+    "learn_more": "Learn more",
+    "technical_details": "Technical Details",
+    "submit_pplication_catalog_form": "Submit Application",
+    "or": "Or",
+    "whatsApp_text": "Message via WhatsApp",
+    "recommended": "Recommended"
+
 }

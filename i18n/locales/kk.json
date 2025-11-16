@@ -1,4 +1,16 @@
 {
+    "logo": "АЙ ЭЛЕКТРО ЛИН",
     "catalog": "Каталог",
-    "submit_application": "Өтініш жіберу"
+    "submit_application": "Өтініш жіберу",
+    "order_callback": "Қоңырау сұрату",
+    "your_name": "Сіздің атыңыз",
+    "your_application": "Сіздің өтінішіңіз",
+    "submit": "Жіберу",
+    "message": "Біз мүмкіндігінше тезірек жауап береміз және жобаң үшін ең жақсы шешімді ұсынамыз.",
+    "learn_more": "Толығырақ",
+    "technical_details": "Техникалық мәліметтер",
+    "submit_pplication_catalog_form": "Өтінім беру",
+    "or": "Немесе",
+    "whatsApp_text": "WhatsApp арқылы жазу",
+    "recommended": "Ұсынамыз"
 }

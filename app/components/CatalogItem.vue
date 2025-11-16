@@ -2,7 +2,7 @@
 const props = defineProps<{
     slug: string
     image: string
-    name: string
+    title: string
 }>()
 
 const localePath = useLocalePath()
@@ -13,17 +13,17 @@ const localePath = useLocalePath()
     <NuxtLink class="flex flex-col h-full gap-y-2.5 md:gap-y-6 cursor-pointer w-full max-w-[460px]"
         :to="localePath(`/catalog/${slug}`)">
         <div class="w-full relative rounded-2xl overflow-hidden pb-[100%] ">
-            <div class="absolute left-0 top-0 w-full h-full">
-                <img class="w-full h-full object-cover" :src="image" alt="Catalog Image">
+            <div class="absolute left-0 top-0 w-full h-full bg-white ">
+                <img class="w-full h-full object-contain " :src="image" alt="Catalog Image">
             </div>
         </div>
 
         <p class="text-xs md:text-lg lg:text-2xl flex-1 font-semibold leading-[130%]">
-            {{ name }}
+            {{ title }}
         </p>
         <span class="flex gap-x-2 items-center font-medium">
             <span class="text-xs md:text-lg text-violet font-medium">
-                Узнать больше
+                {{ $t('learn_more') }}
             </span>
             <span class="w-4 h-4">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">

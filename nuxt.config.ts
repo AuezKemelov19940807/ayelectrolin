@@ -4,6 +4,26 @@ export default defineNuxtConfig({
   css: ["~/assets/css/main.css"],
   devtools: { enabled: true },
 
+  toast: {
+    settings: {
+      position: "topRight",
+      timeout: 4000,
+      closeOnClick: true,
+      closeOnEscape: true,
+      pauseOnHover: true,
+      progressBar: true,
+      transitionIn: "fadeInDown",
+      transitionOut: "fadeOutUp",
+      animateInside: true,
+      drag: false,
+    },
+  },
+
+  runtimeConfig: {
+    public: {
+      apiBaseUrl: process.env.NUXT_PUBLIC_API_BASE_URL,
+    },
+  },
   app: {
     head: {
       script: [
@@ -40,7 +60,7 @@ export default defineNuxtConfig({
     langDir: "locales/",
   },
 
-  modules: ["@nuxt/fonts", "@nuxtjs/i18n", "nuxt-swiper"],
+  modules: ["@nuxt/fonts", "@nuxtjs/i18n", "nuxt-swiper", "nuxt-toast"],
 
   plugins: [
     {

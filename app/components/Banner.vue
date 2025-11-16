@@ -1,5 +1,9 @@
 <script setup lang="ts">
 
+const props = defineProps<{
+    banner: MainBanner
+}>()
+
 
 const { open } = useModal()
 
@@ -11,18 +15,17 @@ const { open } = useModal()
             <div class="flex flex-col-reverse gap-y-10 lg:gap-y-0 lg:flex-row items-center justify-between  gap-x-10 ">
                 <div class="max-w-4xl flex flex-col  items-center lg:items-start gap-y-4">
                     <h1 class="text-2xl md:text-4xl xl:text-5xl   text-center md:text-left font-bold  xl:leading-16">
-                        Собственное производство <span class="text-violet">электрощитов</span> 0,4 кВ –
+                        {{ banner.title }}
                     </h1>
                     <p class="font-semibold text-lg lg:text-2xl text-center lg:text-left">
-                        Профессиональное
-                        решение под любые задачи
+                        {{ banner.subtitle }}
                     </p>
-                    <ApplicationForm class="relative z-50" text="Оставить заявку" @click="open" />
+                    <ApplicationForm class="relative z-50" v-if="banner.btnText" :text="banner.btnText" @click="open" />
                 </div>
                 <div class="relative bg mr-14 md:mr-20">
                     <div class=" w-full h-full max-w-[700px] max-h-[600px]">
                         <img class="w-full h-full object-cover  md:min-w-[700px] md:min-h-[600px] left-0 top-0"
-                            src="~/assets/img/banner.webp" alt="Banner Image">
+                            :src="banner.image" alt="Banner Image">
                     </div>
                 </div>
             </div>
@@ -39,43 +42,30 @@ const { open } = useModal()
 .bg::before {
     content: '';
     position: absolute;
-    background: url('../assets/img/ellipse.png') no-repeat;
+    background: linear-gradient(90deg, #6E3F88 0%, #B95BCF 100%);
     width: 494px;
     height: 494px;
     z-index: -1;
     left: 50%;
-    margin: 35px 0px 0px 110px;
     top: 50%;
+    margin: 35px 0 0 110px;
     transform: translate(-50%, -50%);
+    border-radius: 50%;
+    /* чтобы форма была круглая */
+}
 
-    @media(max-width: 768px) {
-
-        content: '';
-        position: absolute;
-        background: #6E3F88;
+@media(max-width: 768px) {
+    .bg::before {
         width: 90%;
         height: 90%;
-        border-radius: 100%;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        z-index: -1;
-        margin: 0px 0px 0px 80px;
-
-
+        margin: 0 0 0 80px;
     }
+}
 
-
-    @media(max-width: 450px) {
-
-
-        margin: -10px 0px 0px 80px;
-
-
+@media(max-width: 450px) {
+    .bg::before {
+        margin: -10px 0 0 80px;
     }
-
-
-
 }
 
 /* 

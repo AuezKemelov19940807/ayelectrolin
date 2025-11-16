@@ -1,19 +1,39 @@
 <script setup lang="ts">
+const { data, error, pending } = await useMain()
+
+
+const allowedCards = ['summary', 'summary_large_image', 'app', 'player'] as const
+
+useSeoMeta({
+    title: data.value?.seo.title,
+    ogTitle: data.value?.seo.og_title,
+    description: data.value?.seo.description,
+    ogDescription: data.value?.seo.og_description,
+    ogImage: data.value?.seo.og_image,
+    twitterCard: allowedCards.includes(data.value?.seo.twitter_card as any)
+        ? (data.value?.seo.twitter_card as typeof allowedCards[number])
+        : 'summary', // значение по умолчанию
+})
+
+
+
 </script>
 
 <template>
-    <div class="bg mb-18 md:pt-24 lg:mb-28">
-        <Banner class="pb-18 lg:pb-24 2xl:pb-34" />
-        <Equipment />
+    <div v-if="data">
+        <div class="bg mb-18 md:pt-24 lg:mb-28">
+            <Banner class="pb-18 lg:pb-24 2xl:pb-34" :banner="data.banner" />
+            <Equipment :equipment="data.equipment" />
+        </div>
+        <Priority class="mb-18 md:pt-24 lg:mb-28" :priority="data.priority" />
+        <Guarantee class="mb-18 md:mb-40" :guarantee="data.guarantee" />
+        <Brands class="mb-18 md:mb-48" :brand="data.brand" />
+        <Feedback class="mb-18 md:mb-48" :review="data.review" />
+        <Zere class="mb-18 md:mb-48" :company="data.company" />
+        <Projects class="mb-18 md:mb-48" :project="data.project" />
+        <ContactForm class="mb-18 md:mb-30" :consultation="data.consultation" />
     </div>
-    <Priority class="mb-18 md:pt-24 lg:mb-28" />
-    <Guarantee class="mb-18 md:mb-40" />
-    <Brands class="mb-18 md:mb-48" />
-    <Feedback class="mb-18 md:mb-48" />
-    <Zere class="mb-18 md:mb-48" />
-    <Projects class="mb-18 md:mb-48" />
-    <ContactForm class="mb-18 md:mb-30" />
-    <!-- <Map /> -->
+    <div v-else> {{ error }} </div>
 </template>
 <style scoped lang="css">
 .bg {

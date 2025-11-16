@@ -1,4 +1,16 @@
 {
+    "logo": "АЙ ЭЛЕКТРО ЛИН",
     "catalog": "Каталог",
-    "submit_application": "Оставить заявку"
+    "submit_application": "Оставить заявку",
+    "order_callback": "Заказать звонок",
+    "your_name": "Ваше имя",
+    "your_application": "Ваша заявка",
+    "submit": "Отправить",
+    "message": "Мы ответим в ближайшее время и предложим лучшее решение для вашего проекта.",
+    "learn_more": "Узнать больше",
+    "technical_details": "Технические детали",
+    "submit_pplication_catalog_form": "Оформить заявку",
+    "or": "Или",
+    "whatsApp_text": "Написать WhatsApp",
+    "recommended": "Рекомендуем"
 }

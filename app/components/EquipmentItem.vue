@@ -1,7 +1,7 @@
 <script setup lang="ts">
 
 const props = defineProps<{
-    name: string;
+    title: string;
     image: string;
     largeImage: string
 }>()
@@ -17,7 +17,7 @@ const props = defineProps<{
             <img class="w-full h-full  object-cover" :src="image" alt="Equipment Item Image">
         </div>
         <p class="text-center text-lg lg:px-10 2xl:px-0  xl:text-2xl font-semibold mt-auto">
-            {{ name }}
+            {{ title }}
 
         </p>
     </div>

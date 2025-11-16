@@ -1,27 +1,15 @@
 <script setup lang="ts">
 import { onClickOutside } from '@vueuse/core'
+
+const props = defineProps<{
+    swipers: MainGuaranteeSwiper[]
+}>()
+
+
 const swiperRef = ref<any>(null)
 const activeIndex = ref(4)
 
-import guarantee1 from '~/assets/img/guarantee-1.webp'
-import guarantee2 from '~/assets/img/guarantee-2.webp'
-import guarantee3 from '~/assets/img/guarantee-3.webp'
 
-
-const guaranteeItems: any = [
-    {
-        id: 1,
-        image: guarantee1
-    },
-    {
-        id: 2,
-        image: guarantee2
-    },
-    {
-        id: 3,
-        image: guarantee3
-    }
-]
 
 
 const showModal = ref(false)
@@ -29,7 +17,7 @@ const selectedImage = ref<string | null>(null)
 const selectedImageRef = ref<HTMLElement | null>(null)
 
 const openModal = (img: string) => {
-    console.log('1')
+
     selectedImage.value = img
     showModal.value = true
 }
@@ -66,8 +54,17 @@ watch(swiperRef, (swiper) => {
             idx = swiperInstance.clickedIndex ?? s.realIndex
         }
 
-        if (idx !== -1 && guaranteeItems[idx]) {
-            openModal(guaranteeItems[idx].image)
+
+        const img = props.swipers[idx]?.image
+
+        if (idx !== -1 && img) {
+
+            if (img) {
+                openModal(img)
+            }
+
+
+
         }
     }
 
@@ -121,7 +118,7 @@ onClickOutside(selectedImageRef, closeModal)
                         }
                     }
                 }">
-                <swiper-slide class="guarantee" v-for="slide in guaranteeItems" :key="slide.id"
+                <swiper-slide class="guarantee" v-for="slide in swipers" :key="slide.id"
                     @click="openModal(slide.image)">
                     <img class="shadow-md w-full h-full " :src="slide.image" alt="Swiper Image">
                 </swiper-slide>
