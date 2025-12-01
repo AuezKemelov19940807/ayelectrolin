@@ -1,5 +1,6 @@
 <script setup lang="ts">
-
+import { useI18n } from 'vue-i18n'
+const { t } = useI18n()
 const activeMenuBurger = ref<boolean>(false)
 
 // toggle menu burger
@@ -82,7 +83,7 @@ const { open } = useModal()
                         </a>
                     </ul>
                     <Menu />
-                    <ApplicationForm :text="$t('order_callback')" @click="open" />
+                    <ApplicationForm :text="t('order_callback')" @click="open" />
                     <Lang />
                 </div>
             </div>

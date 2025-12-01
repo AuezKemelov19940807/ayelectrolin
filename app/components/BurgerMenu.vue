@@ -19,7 +19,7 @@ const { open } = useModal()
         <Menu />
         <button class="" @click="open">
             <span class="text-violet text-2xl font-semibold ">
-                Заказать звонок
+                {{ $t('order_callback') }}
             </span>
         </button>
 
