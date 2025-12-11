@@ -32,7 +32,8 @@
 // })
 
 
-import { siteMapItems } from '~/app/utils/siteMapItems'
+import { siteMapItems } from '../app/utils/siteMapItems'
+
 
 export default defineEventHandler(async (event) => {
   event.node.res.setHeader('content-type', 'text/xml');
