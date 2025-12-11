@@ -5,7 +5,7 @@
 
 <template>
     <NuxtLoadingIndicator />
-    <div class="flex flex-col h-full">
+    <div class="h-full flex flex-col">
         <Header />
         <main class="flex-1">
             <slot />

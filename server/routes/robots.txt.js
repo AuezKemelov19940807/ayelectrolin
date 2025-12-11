@@ -1,0 +1,29 @@
+export default defineEventHandler(async (event) => {
+
+  event.node.res.setHeader('Content-Type', 'text/plain');
+
+  const baseUrl = 'https://ayelectrolin-zere.kz'
+
+  const result = `User-agent: *
+Allow: /
+Allow: /catalog
+Allow: /catalog/*
+Allow: /catalog/vru-vvodno-raspredelitelnye-ustroistva
+Allow: /catalog/shhk-shhitki-kvartirnye
+Allow: /catalog/shho-oshhv-uoshhv-op
+Allow: /catalog/shhs-rshhs
+Allow: /catalog/shho-70
+Allow: /catalog/pr-punkty-raspredelitelnye
+Allow: /catalog/shhsn-shhity-sobstvennyx-nuzd
+Allow: /catalog/sa-shha-skafy-i-shhity-avtomatiki
+Allow: /catalog/avr-savr-shhavr-skafy-i-shhity-avtomaticeskogo-vvoda-rezerva
+Allow: /catalog/suv-shhuv-skafy-i-shhity-upravleniia-ventiliaciei
+Allow: /catalog/shhe-shhity-etaznye
+Allow: /catalog/grshh-glavnye-raspredelitelnye-shhity
+
+Sitemap: ${baseUrl}/sitemap.xml
+Host: ${baseUrl}
+`
+
+  return result;
+})
