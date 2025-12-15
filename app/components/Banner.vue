@@ -14,18 +14,17 @@ const { open } = useModal()
         <div class="container">
             <div class="flex flex-col-reverse gap-y-10 lg:gap-y-0 lg:flex-row items-center justify-between  gap-x-10 ">
                 <div class="max-w-4xl flex flex-col  items-center lg:items-start gap-y-4">
-                    <h1 class="text-2xl md:text-4xl xl:text-5xl   text-center md:text-left font-bold  xl:leading-16">
+                    <h1 class="text-2xl md:text-3xl xl:4xl 2xl:text-5xl text-center md:text-left font-bold  ">
                         {{ banner.title }}
                     </h1>
-                    <p class="font-semibold text-lg lg:text-2xl text-center lg:text-left">
+                    <p class="font-semibold text-lg  text-center lg:text-left">
                         {{ banner.subtitle }}
                     </p>
                     <ApplicationForm class="relative z-50" v-if="banner.btnText" :text="banner.btnText" @click="open" />
                 </div>
                 <div class="relative bg mr-14 md:mr-20">
                     <div class=" w-full h-full max-w-[700px] max-h-[600px]">
-                        <img class="w-full h-full object-cover  md:min-w-[700px] md:min-h-[600px] left-0 top-0"
-                            :src="banner.image" alt="Banner Image">
+                        <img class="w-full h-full object-cover  left-0 top-0" :src="banner.image" alt="Banner Image">
                     </div>
                 </div>
             </div>

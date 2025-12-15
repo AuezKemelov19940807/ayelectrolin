@@ -16,12 +16,12 @@ body,
 #__nuxt {
  
     font-family: "Montserrat", sans-serif;
-    @apply min-h-screen overflow-x-hidden font-medium bg-[#F5F9FF];
+    @apply min-h-screen overflow-x-hidden font-medium bg-[#F5F9FF] ;
    
 }
 
 .container {
-  @apply w-full max-w-[1600px] mx-auto px-4 md:px-5;
+  @apply w-full max-w-[1600px] mx-auto px-4 md:px-5 xl:w-[85%] 2xl:w-[83%];
        
 }
 
